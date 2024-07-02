@@ -25,5 +25,11 @@ describe('template spec', () => {
 
     // Проверить, что файл появился в div с тегом a
     cy.get('div a').contains('UA-14360570-2018').should('be.visible');
+
+    // Проверить, что данные файла появились на инфопанели
+    cy.get('table td').contains('UA-14360570-2018').should('be.visible');
+    cy.get('table td').contains('UA-00015622-2017').should('be.visible');
+    cy.get('table td').contains('2018-11-06 11:56:00 UTC').should('be.visible');
+    cy.get('table td').contains('2023-11-06 11:56:00 UTC').should('be.visible');
   });
 });
